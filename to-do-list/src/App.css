@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #ecf0f1;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
+  row-gap: 15px;
+  column-gap: 10px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.fontBlack{
+  color: #222;
+}
+
+.border2px{
+  border: 2px solid black;
+}
+
+.width100{
+  width: 100%;
+}
+
+.width80{
+  width: 80%;
+}
+
+.widthFitContent{
+  width: fit-content;
+}
+
+
+.centerFlex{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}

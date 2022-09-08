@@ -1,0 +1,28 @@
+
+.product{
+    position: relative;
+    padding: 3px 10px;
+    flex: 1 1 fit-content;
+    font-size: 1.2rem;
+    color: #ecf0f1;
+  }
+  
+  .product::after{
+    position: absolute;
+    content: '';
+    left: 15%;
+    bottom: 0;
+    height: 2px;
+    width: 70%;
+    background-color: #3335;
+    align-self: center;
+  }
+  
+  
+  .product-brand, .product-desc, .product-price{
+    font-size: .8rem;
+    text-align: start;
+    padding: 0 4px;
+    hyphens: auto;
+    color: #34495e;
+  }

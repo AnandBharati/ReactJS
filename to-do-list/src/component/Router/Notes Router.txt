@@ -1,0 +1,61 @@
+<BrowserRouter/> - it is used to declare that we are going to use Route functions
+<Routes> - it is a container which contain multiple route tags
+<Route> - this is use for routing
+<Route path='/' element={<Home />}>  - this can be used to route to homepage whenever user load the website
+<Route index element={<Home />} /> => this can be used to display homepage everytime it encounter '/' in URL
+
+
+// SharedLayout is the layout which we will going to use as a common space where the pages should load after routing
+//common scape can be created using <Outlet/> tag defined in react-router-dom
+<BrowserRouter>
+<Routes>
+    <Route path='/' element={<SharedLayout />}> {/*for using Outlet we are wrapping this component*/}
+    <Route index element={<Home />} /> {/* added index so that it should always display on wen=bsite load */}
+    <Route path='products' element={<Products />} />
+    <Route path='products/:product_id' element={<SingleProduct />} /> {/*product_id will be used in SingleProduct comp using useParams method of React router dom*/}
+    <Route path='contact' element={<Contact />} />
+    <Route path='about-us' element={<AboutUs />} />
+    <Route path='*' element={<Error />} />
+    </Route>
+</Routes>
+</BrowserRouter>
+
+
+//Link tags can be used to change the URL or as a goto link
+    <>
+     <Link to='/' className='btn'> HomePage </Link>
+     <Link to='products' className='btn'> Products </Link>
+      <Link to='about-us' className='btn'> About Us </Link>      
+      <Link to='contact' className='btn'> Contact </Link>
+      <Link to='assddsdf' className='btn'> Error Page </Link>
+    </>
+
+//using <Outlet/>
+import {Outlet } from 'react-router-dom'
+
+function SharedLayout() {
+  return (
+    <>
+        <NavBar/>
+        <section className='OutletSection fullWidth'>
+                 <Outlet/> {/*outlet will allow to use shared layout which means that all route result or page will display here*/}
+        </section>
+    </>
+  )
+}
+export default SharedLayout
+
+//useParam is used to get values from URL like Product_id which was passed during <route/>
+import { useParams } from 'react-router-dom'
+function SingleProduct() {
+  const product_id = useParams().product_id; 
+  /* product_id passed in url can be accessed using useParams*/
+  console.log(product_id)
+  return (
+    <>
+      <p className='blackFont'>SingleProduct</p>
+      <h1 className='blackFont'> Product id - {product_id} </h1>
+    </>
+  )
+}
+export default SingleProduct

@@ -1,0 +1,33 @@
+p{
+    color: #222;
+}
+
+.btn{
+    border: 2px solid blue;
+}
+
+.btn:hover{
+    border: 2px solid crimson;
+    color: black;
+}
+
+.btn:visited{
+    border: 2px solid grey;
+    color: black; 
+}
+
+.redFont{
+    color: crimson;
+}
+
+.blackFont{
+    color: black;
+}
+
+.fullWidth{
+    width: 80%;
+}
+
+.OutletSection{
+    border: 2px solid #3337;
+}
